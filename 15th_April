@@ -1,0 +1,147 @@
+1. If there are same methods in superclass and subclass then the methods of superclass are hidden by tht of the subclass. This is known as method hiding.
+
+2. Varargs is a short name for variable arguments. In Java, an argument of a method can accept arbitrary number of values. This argument that can accept variable number of values is called varargs
+
+3. We can decalre multiple labels with commas seperated. We can aslo return value through break. We can also return value through arrow or label rules.
+
+4. 
+
+	class Lady
+	{
+		public void display()
+		{
+			System.out.println("In Base Class");
+
+		}
+		
+	}
+
+	class Empl extends Lady
+	{
+		public void display()
+		{
+			System.out.println("In Employee Derived Class");
+
+		}	
+	}
+
+	class HomeMaker extends Lady
+	{
+		public void display()
+		{
+			System.out.println("In Home maker Derived Class");
+
+		}	
+	}
+
+	class Member extends Lady
+	{
+		public void display()
+		{
+			System.out.println("In Member Derived Class");
+
+		}	
+	}
+
+	public class DemoMain
+	{
+		public static void main(String []args)
+		{
+			Lady l = new Lady();
+			Empl e = new Empl();
+			HomeMaker h = new HomeMaker();
+			Member m = new Member();
+		
+			l.display();
+			e.display();
+			h.display();
+			m.display();
+		}
+	
+	}
+
+5. Static Polymorphism means the condition in which the method is having same name but multiple forms. Number and type of argurments can vary but the method name remains the same.
+	If we take the example of add method , this method having same name but the arguments and the type differ.
+
+	class Demo
+	{
+    		public int add(int x, int y){  
+    		return x+y;
+    		}
+
+    		public int add(int x, int y, int z){ 
+   		 return x+y+z;
+    		}
+
+    		public int add(double x, int y){ 
+    		return (int)x+y;
+    		}
+
+    	}
+
+	public class Test
+	{
+    		public static void main(String[] args){
+    		Demo demo=new Demo();
+    		System.out.println(demo.add(2,3));      //method 1 called
+    		System.out.println(demo.add(2,3,4));    //method 2 called
+       
+    		System.out.println(demo.add(2.5,3));    //method 3 called
+    	}
+     }
+
+6. 
+
+	class Employee
+	{
+		Employee()
+		{
+			System.out.println("In Base Class");
+		}
+	}
+	
+	class Admin extends Employee
+	{
+		Admin()
+		{
+			super();
+			//System.out.println("In Admin Class");
+		}
+	}
+
+	class Manager extends Employee
+	{
+		Manager()
+		{
+			super();
+			//System.out.println("In Manager Class");
+		}
+	}
+
+	public class Demo
+	{
+		public static void main(String []args)
+		{
+			Admin a1 = new Admin();	
+			Admin a2 = new Admin();
+			Admin a3 = new Admin();
+			Admin a4 = new Admin();
+			Admin a5 = new Admin();
+	
+			Manager m1 = new Manager();
+			Manager m2 = new Manager();
+			Manager m3 = new Manager();
+
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
+
